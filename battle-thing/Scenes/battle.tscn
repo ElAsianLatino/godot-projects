@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://b23hxr15fw3s1"]
+
+[ext_resource type="Texture2D" uid="uid://cki816suuvnds" path="res://icon.svg" id="1_oxf17"]
+[ext_resource type="PackedScene" uid="uid://dbaddwuqqkgp2" path="res://Scenes/field.tscn" id="1_w7k78"]
+
+[sub_resource type="Environment" id="Environment_ygwbq"]
+background_mode = 3
+
+[node name="Battle" type="Node3D" unique_id=239187527]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2014888327]
+transform = Transform3D(-4.3660815e-08, 0.6052047, -0.7960699, -2.1020885e-09, 0.7960699, 0.6052047, 1, 2.809714e-08, -3.3484866e-08, -6.5, 7.5, 0)
+projection = 1
+fov = 54.2
+size = 9.461
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D" unique_id=1805190918]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Camera3D" unique_id=1999729154]
+environment = SubResource("Environment_ygwbq")
+
+[node name="MovingBG" type="CanvasLayer" parent="Camera3D/WorldEnvironment" unique_id=991062336]
+layer = -15
+follow_viewport_enabled = true
+
+[node name="ControlParent" type="Control" parent="Camera3D/WorldEnvironment/MovingBG" unique_id=580852378]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ControlContainer" type="Control" parent="Camera3D/WorldEnvironment/MovingBG/ControlParent" unique_id=1624576995]
+custom_maximum_size = Vector2(0, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Parallax2D" type="Parallax2D" parent="Camera3D/WorldEnvironment/MovingBG/ControlParent/ControlContainer" unique_id=1118672467]
+scroll_scale = Vector2(0, 0)
+repeat_size = Vector2(128, 128)
+autoscroll = Vector2(50, 35)
+repeat_times = 16
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera3D/WorldEnvironment/MovingBG/ControlParent/ControlContainer/Parallax2D" unique_id=971941334]
+texture = ExtResource("1_oxf17")
+
+[node name="Field" parent="." unique_id=76690476 instance=ExtResource("1_w7k78")]

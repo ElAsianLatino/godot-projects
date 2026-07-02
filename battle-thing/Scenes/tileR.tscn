@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cmbsesvdvdx13"]
+
+[ext_resource type="Texture2D" uid="uid://dscirgvnwp2yb" path="res://qweQ11rWMiY-HD.jpg" id="1_78e5m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xsjyq"]
+albedo_color = Color(1, 0.54124093, 0.4767593, 1)
+albedo_texture = ExtResource("1_78e5m")
+
+[sub_resource type="BoxMesh" id="BoxMesh_ygwbq"]
+material = SubResource("StandardMaterial3D_xsjyq")
+size = Vector3(2, 0.2, 2.75)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_78e5m"]
+points = PackedVector3Array(1, 0.1, 1.3749998, 1, -0.1, 1.3749998, 1, 0.1, -1.375, -1, 0.1, 1.3749998, -1, -0.1, 1.3749998, 1, -0.1, -1.375, -1, 0.1, -1.375, -1, -0.1, -1.375)
+
+[node name="Tile" type="Node3D" unique_id=1031488651]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=945634111]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=2084595995]
+mesh = SubResource("BoxMesh_ygwbq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=216964320]
+shape = SubResource("ConvexPolygonShape3D_78e5m")
