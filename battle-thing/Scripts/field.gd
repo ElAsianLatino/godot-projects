@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var parent: Node3D = $Node3D
+@onready var parent: Node3D = $Container
 
 func returnFieldDict() -> Dictionary[String, Node3D]:
 	var dict: Dictionary[String, Node3D]

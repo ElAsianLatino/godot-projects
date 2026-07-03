@@ -211,6 +211,7 @@ shape = SubResource("BoxShape3D_ygwbq")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Mannequin_Medium" unique_id=1649564439]
 libraries/CMelee = ExtResource("2_6t5aa")
 libraries/General = ExtResource("3_vgqql")
+autoplay = &"CMelee/Melee_2H_Idle"
 
 [node name="Rig_Medium" type="Node3D" parent="Mannequin_Medium" unique_id=1562964352]
 
