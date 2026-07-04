@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://ls8cgwb2u6x5"]
+
+[ext_resource type="Texture2D" uid="uid://b1k5fyhb48fqc" path="res://Centralbg.png" id="1_1fyk6"]
+
+[sub_resource type="Environment" id="Environment_ygwbq"]
+background_mode = 3
+background_canvas_max_layer = -100
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+reflected_light_source = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdo6f"]
+atlas = ExtResource("1_1fyk6")
+region = Rect2(4, 4, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ha8nf"]
+atlas = ExtResource("1_1fyk6")
+region = Rect2(136, 4, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hex7"]
+atlas = ExtResource("1_1fyk6")
+region = Rect2(4, 72, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0vxs"]
+atlas = ExtResource("1_1fyk6")
+region = Rect2(136, 72, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wh7op"]
+atlas = ExtResource("1_1fyk6")
+region = Rect2(4, 140, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2fby"]
+atlas = ExtResource("1_1fyk6")
+region = Rect2(136, 140, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtuxm"]
+atlas = ExtResource("1_1fyk6")
+region = Rect2(4, 208, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pd5xk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdo6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ha8nf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hex7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0vxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wh7op")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2fby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtuxm")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 5.0
+}]
+
+[node name="EnvironmentBG" type="WorldEnvironment" unique_id=648481964]
+process_mode = 3
+environment = SubResource("Environment_ygwbq")
+
+[node name="MovingBG" type="CanvasLayer" parent="." unique_id=1489431112]
+layer = -100
+
+[node name="ControlParent" type="Control" parent="MovingBG" unique_id=2001775681]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_force_pass_scroll_events = false
+
+[node name="ControlContainer" type="Control" parent="MovingBG/ControlParent" unique_id=445971061]
+custom_maximum_size = Vector2(0, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_force_pass_scroll_events = false
+
+[node name="Parallax2D" type="Parallax2D" parent="MovingBG/ControlParent/ControlContainer" unique_id=1516556858]
+repeat_size = Vector2(639, 319)
+autoscroll = Vector2(100, 70)
+repeat_times = 6
+follow_viewport = false
+ignore_camera_scroll = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MovingBG/ControlParent/ControlContainer/Parallax2D" unique_id=927712763]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_pd5xk")
+animation = &"move"
+autoplay = "move"
+frame = 4
+frame_progress = 0.06956985
