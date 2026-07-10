@@ -2,7 +2,7 @@ extends Node3D
 
 
 @export var player_scene: PackedScene
-@onready var field_tiles: Dictionary = $Field.returnFieldDict()
+@onready var field_tiles: Dictionary = $Field.return_field_dict()
 
 func _ready() -> void:
 	var player_instance = player_scene.instantiate()

@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://cdceg5817i3yt"]
 
 [ext_resource type="Texture2D" uid="uid://b072v7svdqqb0" path="res://KayKit/KayKit_Character_Animations_1.1/Mannequin Character/characters/Mannequin_Medium_mannequin_texture.png" id="1_qpa8y"]
+[ext_resource type="Script" uid="uid://bsasliplrleh1" path="res://Scripts/player.gd" id="1_vgqql"]
 [ext_resource type="AnimationLibrary" uid="uid://cjducx6x6g4vq" path="res://KayKit/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/CMelee/CMelee.res" id="2_6t5aa"]
 [ext_resource type="AnimationLibrary" uid="uid://1j5ehj45ho0q" path="res://KayKit/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/General/General.res" id="3_vgqql"]
 
@@ -200,6 +201,7 @@ _surfaces = [{
 blend_shape_mode = 0
 
 [node name="player" type="CharacterBody3D" unique_id=491178602]
+script = ExtResource("1_vgqql")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=129958497]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0570679, 0)
